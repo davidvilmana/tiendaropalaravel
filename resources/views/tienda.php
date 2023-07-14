@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tienda de Ropa</title>
+    <title>Tienda Online</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Tienda de Ropa</a>
+        <a class="navbar-brand" href="#">Tienda Online</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,7 +27,7 @@
     </nav>
     
     <div class="container">
-        <h1>Bienvenido a la Tienda de Ropa</h1>
+        <h1>Bienvenido a la Tienda Online</h1>
         <p>Explora nuestra amplia selección de ropa y encuentra las mejores ofertas.</p>
     </div>
 
@@ -37,7 +37,7 @@
         <div class="row">
             <?php
             // Conexión a la base de datos
-            $conn = mysqli_connect("127.0.0.1:3307", "root", "", "tienda_ropa");
+            $conn = mysqli_connect("127.0.0.1:3307", "root", "", "tienda_online");
             if (!$conn) {
                 die("Error de conexión: " . mysqli_connect_error());
             }
@@ -50,9 +50,7 @@
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<div class="col-lg-3 col-md-4 col-sm-6">';
                 echo '<div class="card">';
-                // 
-                echo '<img class="card-img-top" src="' . $row['imagen'] . '" alt="' . $row['nombre'] . '">';
-                // PONER IMAGENES 
+                echo '<img class="card-img-top" width= "200" height="300" src="'. $row['imagen'] . '" alt="' . $row['nombre'] . '">';
                 echo '<div class="card-body">';
                 echo '<h5 class="card-title">' . $row['nombre'] . '</h5>';
                 echo '<p class="card-text">' . $row['descripcion'] . '</p>';

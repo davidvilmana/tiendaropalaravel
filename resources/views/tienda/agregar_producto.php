@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!$producto_en_carrito) {
         // Obtener la información del producto desde la base de datos
-        $conn = mysqli_connect("127.0.0.1:3307", "root", "", "tienda_ropa");
+        $conn = mysqli_connect("127.0.0.1:3307", "root", "", "tienda_online");
         if (!$conn) {
             die("Error de conexión: " . mysqli_connect_error());
         }
